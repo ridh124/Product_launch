@@ -244,25 +244,26 @@
                         <label for="config-id">Hidden Configuration ID:</label>
                         <input type="hidden" id="config-id" value="ZXU221">
                     </div>
-
-                    <select id="size-select" class="input-style">
+                    <label for="size-select" style="display:block; font-weight:600; margin-bottom:6px;">Size</label>
+                    <select id="size-select" class="input-style" aria-required="true">
                         <option value="">-- Select Size --</option>
                         <option value="42mm">42mm (Standard)</option>
                         <option value="46mm">46mm (Large)</option>
                     </select>
                     
-                    <input type="number" id="quantity" class="input-style" placeholder="Quantity (Required)" min="1" value="1">
+                    <label for="quantity" style="display:block; font-weight:600; margin-top:8px;">Quantity</label>
+                    <input type="number" id="quantity" class="input-style" placeholder="Quantity (Required)" min="1" value="1" aria-required="true">
 
-                    <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <p style="font-weight: 500;">Strap Material:</p>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <input type="radio" name="strap" id="strap-silicone" value="silicone" style="height: 16px; width: 16px; color: var(--brand-blue);">
+                    <fieldset style="margin-top:1rem; border:0; padding:0;">
+                          <legend style="font-weight:600; margin-bottom:6px;">Strap Material</legend>
+                          <div style="display:flex; gap:1rem; align-items:center;">
+                            <input type="radio" id="strap-silicone" name="strap" value="silicone" />
                             <label for="strap-silicone">Silicone Sport</label>
-
-                            <input type="radio" name="strap" id="strap-leather" value="leather" style="height: 16px; width: 16px; color: var(--brand-blue);">
-                            <span>Leather Classic</span>
-                        </div>
-                    </div>
+                        
+                            <input type="radio" id="strap-leather" name="strap" value="leather" />
+                            <label for="strap-leather">Leather Classic</label>
+                          </div>
+                    </fieldset>
 
                     <div id="buy-now-btn" class="low-contrast-button"
                         onclick="addToCart()" accesskey="b" role="button" tabindex="0">
